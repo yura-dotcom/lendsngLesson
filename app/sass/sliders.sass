@@ -1,0 +1,328 @@
+@import variables.sass
+
+
+.slick-arrow
+  font-size: 0
+  border: none
+  background: transparent
+  &::before
+    display: block
+    content: ''
+    font-size: 19px
+    font-weight: bold
+    color: $standart
+    font-family: fontello
+  &.slick-prev
+    &::before
+      content: '\e81f'
+  &.slick-next
+    &::before
+      content: '\e81e'
+  &:hover, &:focus
+    &::before
+      color: $active
+    
+    
+
+
+.slick-dots
+  display: flex
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  li
+    button
+      display: block
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      border: none
+      background: $standart
+      font-size: 0
+      margin: 0 2px
+      &:hover
+        background: #5F82FF
+    &.slick-active
+      button
+        background: #5F82FF
+
+.slider_full
+  overflow-x: hidden
+  width: 100vw !important
+  .slick-dots
+    bottom: 30px
+
+  .slide
+    display: flex !important
+    justify-content: center
+    text-align: center
+    background: url('../images/dest/photos/first_sec.png') center center/cover no-repeat 
+    width: 100vw
+    height: auto  
+    padding: 92px 0 80px
+    .content_wrap
+      width: auto
+
+// fulsection_slider
+
+
+
+// blog_slider
+
+.slider_blog
+  position: relative
+  .slick-dots
+    bottom: -15px
+
+  .slick-arrow
+    position: absolute
+    top: 102.4%
+    z-index: 9
+    transform: translateY(-50%) 
+    &.slick-prev
+      left: 8px
+    &.slick-next
+      right: 8px
+
+
+
+
+
+
+.slider_blog
+  width: 100%
+  // margin: 0 auto
+
+.slide_blog
+  display: flex
+  align-items: stretch
+  justify-content: center
+  flex-wrap: wrap
+  background: #FFFFFF
+  border: 1px solid #D8E3FE
+  box-shadow: 0px 15px 50px #EFF4FF
+  // margin-top: 50px
+  .slide_galery,.slide_content
+    padding:  5px
+    width: 100%
+  .slide_content
+    padding:  15px
+  .slide_galery 
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: repeat(4, 1fr)
+    .img_holder
+      position: relative
+      overflow: hidden
+      img
+        width: 100%
+        height: 100%
+        padding: 10px
+      &:hover
+        img
+          transform: scale(1.2)
+        &::before
+          content: '\e80e'
+          background: $bgstandart
+          z-index: 10 
+      &:nth-child(1) 
+        grid-area: 1 / 1 / 5 / 9
+      &:nth-child(2)
+        grid-area: 1 / 9 / 3 / 13
+      &:nth-child(3) 
+        grid-area: 3 / 9 / 5 / 13
+      &::before
+        position: absolute
+        top: 50%
+        left: 50%
+        z-index: 9
+        transform: translate(-50%,-50%)
+        content: ''
+        background: tranparent
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 20%
+        height: 20%
+        border-radius: 50%
+        z-index: -1
+        color: $grey
+        
+        
+  .slide_content
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    padding-top: 0
+    .text
+      margin-bottom: 20px
+
+.slider_line
+  background: linear-gradient(180deg, #EAF0FF 0%, #F6F9FF 100%)
+ 
+  .slider_line_inner
+    flex-wrap: wrap
+
+  .content_text
+    padding: 20px 40px
+  .slick-dots 
+    left: 50%
+  .slide_e
+    margin: 0 5px 45px 5px
+    // margin-bottom: 45px
+    opacity: 0.4
+    &.slick-current 
+      opacity: 1
+    &:hover
+      opacity: 1
+    .text
+      padding: 20px 20px 40px
+      background: #fff
+      border: 1px solid #D8E3FE
+      box-shadow: 0px 5px 50px #F3F5FA
+      position: relative
+    .img_holder
+      position: absolute
+      left: 50%
+      bottom: -19%
+      width: 60px
+      height: 60px
+      border-radius: 50%
+      overflow: hidden
+      transform: translateX(-50%)
+      margin: 0 auto
+      z-index: 9
+
+
+
+
+
+@media screen and (min-width: 450px)
+
+
+@media screen and (min-width: 576px)
+
+  // .slider_line 
+  //   .slide_e
+  //     .text
+  //       min-height: 160px
+
+
+
+  .slider_blog
+
+    .slide_blog
+      .slide_galery,.slide_content
+        padding:  16px
+    .slick-dots
+      bottom: -25px
+
+  .slider_line
+
+    .slick-dots 
+      left: 47.5%
+
+
+@media screen and (min-width: 768px) 
+
+  .slider_full
+    .slide
+      min-height: 570px
+      padding: 92px 0 212px
+      .content_wrap
+        width: 600px
+
+  .slide_blog
+    .slide_galery,.slide_content
+      padding: 30px
+    .slide_content
+      padding-top: 0
+
+
+@media screen and (min-width: 990px) 
+
+
+  .slider_blog
+    width: 70%
+    .slick-arrow
+      top: 50%
+      transform: translateY(-50%) 
+      &.slick-prev
+        left: -50px
+      &.slick-next
+        right: -50px
+
+
+
+  .slider_line
+    .slider_line_inner
+      flex-wrap: nowrap
+    .content_text
+      padding: 70px 30px 70px 100px
+    // .slide_e
+    //   min-height: 280px !important
+    //   .text
+    //     height: 220px
+      .img_holder
+        bottom: -15%
+    .slick-dots 
+      left: 30%
+
+    .slide_e
+      transform: translateX(-30%)
+      // padding: 10px
+      // filter: drop-shadow(0px 15px 50px #D4DCF1)
+      opacity: 0.4
+      &.slick-current 
+        opacity: 1
+      &:hover
+        opacity: 1
+      .text
+        // width: 65%
+        padding: 20px 
+        background: #fff
+        border: 1px solid #D8E3FE
+        box-shadow: 0px 5px 50px #F3F5FA
+        position: relative
+      .img_holder
+        position: absolute
+        left: 50%
+        bottom: -19%
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        overflow: hidden
+        transform: translateX(-50%)
+        margin: 0 auto
+        z-index: 9
+
+
+
+@media screen and (min-width: 1024px) 
+
+  .slider_line
+    .slide_e
+      .text
+        // height: auto
+        padding: 27px 
+    .slick-dots 
+      left: 30%
+      margin-top: 15px
+    
+  
+@media screen and (min-width: 1440px) 
+
+  .slide_blog
+    flex-wrap: nowrap
+    .slide_galery,.slide_content
+      padding: 60px 30px
+      width: 45%
+
+  .slider_line
+    .content_text
+      padding: 140px 30px 140px 270px
+
+    .slide_e
+      .text
+        padding: 40px 70px
+    
